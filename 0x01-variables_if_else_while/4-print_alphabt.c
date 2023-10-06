@@ -6,16 +6,16 @@
  */
 int main(void)
 {
-	char L, U;
+	char n;
 
-	for (L = 'a'; L <= 'z'; L++)
+	for (n = 'a'; n <= 'z' ; n++)
 	{
-		putchar(L);
-	}
+		if (n == 'q' || n == 'e')
+		{
+			continue;
+		}
 
-	for (U = 'A'; U <= 'Z'; U++)
-	{
-		putchar(U);
+		putchar(n);
 	}
 
 	putchar('\n');

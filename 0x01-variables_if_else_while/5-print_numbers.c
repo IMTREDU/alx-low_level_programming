@@ -6,19 +6,14 @@
  */
 int main(void)
 {
-	char L, U;
+	int n;
 
-	for (L = 'a'; L <= 'z'; L++)
+	for (n = 0 ; n<=9; n++)
 	{
-		putchar(L);
+		printf("%d", n);
 	}
 
-	for (U = 'A'; U <= 'Z'; U++)
-	{
-		putchar(U);
-	}
-
-	putchar('\n');
+	printf("\n");
 
 	return (0);
 }
