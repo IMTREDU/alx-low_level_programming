@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * Print_alphabet - It is a function
- *
+ * _isalpha - It is a function
+ * @c: variable from main
  * Return: Return int
  */
 int _isalpha(int c)

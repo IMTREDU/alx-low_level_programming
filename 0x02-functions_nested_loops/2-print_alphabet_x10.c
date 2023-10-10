@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * Print_alphabet_X10 - It is a function
+ * print_alphabet_x10 - It is a function
  *
  * Return: Return Void
  */

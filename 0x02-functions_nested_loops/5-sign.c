@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * Print_sign - It is a function
- *
+ * print_sign - It is a function
+ * @n: Variable from main
  * Return: Return int
  */
 int print_sign(int n)

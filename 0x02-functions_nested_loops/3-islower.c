@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _islower - It is a function
- *
+ * @c: variable from main
  * Return: Return int
  */
 int _islower(int c)
