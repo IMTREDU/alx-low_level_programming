@@ -1,4 +1,7 @@
 #include "main.h"
+
+int AC(int n, int i);
+
 /**
  * is_prime_number - It is a function
  * @n: Variable from main
@@ -6,24 +9,28 @@
  */
 int is_prime_number(int n)
 {
-	int i;
-
-	if (n < 2)
+	if (n <= 1)
 	{
 		return (0);
 	}
-	if (n == 2)
+	return (AC(n, n - 1));
+}
+
+/**
+ * AC - It is a function
+ * @n: Variable from main
+ * @i: Variable from main
+ * Return: Return 1/0
+ */
+int AC(int n, int i)
+{
+	if (i == 1)
 	{
 		return (1);
 	}
-
-	for (i = 2; i * i <= n; i++)
+	if (n % i == 0 && i > 0)
 	{
-		if (n % i == 0)
-		{
-			return (0);
-		}
+		return (0);
 	}
-
-	return (1);
+	return (AC(n, i - 1));
 }

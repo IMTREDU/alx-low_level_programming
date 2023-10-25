@@ -6,30 +6,36 @@
  */
 int _sqrt_recursion(int n)
 {
+	int find_sqrt(int n, int i);
+
 	if (n < 0)
 	{
 		return (-1);
 	}
-	else if (n == 0 || n == 1)
+	if (n == 0 || n == 1)
 	{
 		return (n);
 	}
-	else
+
+	return (find_sqrt(n, 1));
+}
+
+/**
+ * find_sqrt - It is a function
+ * @n: Variable from main
+ * @i: Variable from main
+ * Return: Return Void
+ */
+int find_sqrt(int n, int i)
+{
+	if (i * i == n)
 	{
-		int i;
-
-
-		for (i = 1; i <= n / 2; i++)
-		{
-			if (i * i == n)
-			{
-				return (i);
-			}
-			else if (i * i > n)
-			{
-				break;
-			}
-		}
+		return (i);
+	}
+	if (i * i > n)
+	{
 		return (-1);
 	}
+
+	return (find_sqrt(n, i + 1));
 }
