@@ -8,33 +8,35 @@
  * @argv: Argument vector
  * Return: Return 0
  */
+
 int main(int argc, char *argv[])
 {
-	int n1, n2, result;
-	char *op;
+	int a, b;
+	int (*op)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
 
-	n1 = atoi(argv[1]);
-	op = argv[2];
-	n2 = atoi(argv[3]);
-
-	if (get_op_func(op) == NULL)
+	if (argv[2][1])
 	{
 		printf("Error\n");
-		return (99);
+		exit(99);
 	}
-	if ((*op == '/' || *op == '%') && n2 == 0)
+
+	op = get_op_func(argv[2]);
+
+	if (op == NULL)
 	{
 		printf("Error\n");
-		return (100);
+		exit(99);
 	}
-	result = get_op_func(op)(n1, n2);
 
-	printf("%d\n", result);
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	printf("%d\n", op(a, b));
 	return (0);
 }
