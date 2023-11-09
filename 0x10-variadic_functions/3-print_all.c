@@ -10,8 +10,7 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
-	char *str;
-	char c;
+	char *str, c;
 	float f;
 	int num;
 
@@ -23,37 +22,27 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				c = va_arg(args, int);
-				printf("%c", c);
+				printf("%s%c", i ? ", " : "", c);
 				break;
 			case 'i':
 				num = va_arg(args, int);
-				printf("%d", num);
+				printf("%s%d", i ? ", " : "", num);
 				break;
 			case 'f':
 				f = va_arg(args, double);
-				printf("%f", f);
+				printf("%s%f", i ? ", " : "", f);
 				break;
 			case 's':
 				str = va_arg(args, char *);
-				if (str == NULL)
-				{
-					str = "(nil)";
-				}
+				printf("%s%s", (str != NULL) ? (i ? ", " : "") : "(nil)", str);
 				printf("%s", str);
 				break;
 			default:
 				i++;
 				continue;
 		}
-
-		if (format[i + 1])
-		{
-			printf(", ");
-		}
-
 		i++;
 	}
-
 	printf("\n");
 	va_end(args);
 }
