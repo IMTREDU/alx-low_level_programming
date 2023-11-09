@@ -22,24 +22,27 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				c = va_arg(args, int);
-				printf("%s%c", i ? ", " : "", c);
+				printf("%c", c);
 				break;
 			case 'i':
 				num = va_arg(args, int);
-				printf("%s%d", i ? ", " : "", num);
+				printf("%d", num);
 				break;
 			case 'f':
 				f = va_arg(args, double);
-				printf("%s%f", i ? ", " : "", f);
+				printf("%f", f);
 				break;
 			case 's':
 				str = va_arg(args, char *);
-				printf("%s%s", (str != NULL) ? (i ? ", " : "") : "(nil)", str);
-				printf("%s", str);
+				printf("%s%s", (str != NULL) ? (i ? "" : "") : "(nil)", str);
 				break;
 			default:
 				i++;
 				continue;
+		}
+		if (format[i + 1])
+		{
+			printf(", ");
 		}
 		i++;
 	}
